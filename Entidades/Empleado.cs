@@ -15,6 +15,7 @@ namespace Entidades
         int telefono;
         string direccion;
         string genero;
+        string area;
 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
@@ -23,5 +24,6 @@ namespace Entidades
         public int Telefono { get => telefono; set => telefono = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Genero { get => genero; set => genero = value; }
+        public string Area { get => area; set => area = value; }
     }
 }

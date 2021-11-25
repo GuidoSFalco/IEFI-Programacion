@@ -66,7 +66,7 @@ namespace ConexionBD
             if (accion == "Modificar")
             {
 
-                orden = "Update Clientes set Nombre = @Nombre, [Fecha-de-nacimiento] = @Fecha, Sexo= @Sexo, Legajo= @Legajo, Carrera=@Carrera where Dni = @Dni";
+                orden = "Update Clientes set Responsable = @Responsable, Adultos = @Adultos, Menores= @Menores, Habitaciones= @Habitaciones, FechaIng=@FechaIng,FechaFin=@FechaFin where Responsable = @Responsable";
                 OleDbCommand cmd = new OleDbCommand(orden, conexion);
                 try
                 {

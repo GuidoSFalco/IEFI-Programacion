@@ -38,11 +38,13 @@ namespace Formularios
             this.radioButtonM = new System.Windows.Forms.RadioButton();
             this.radioButtonF = new System.Windows.Forms.RadioButton();
             this.radioButtonO = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@ namespace Formularios
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 318);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtNombre
             // 
@@ -61,14 +64,17 @@ namespace Formularios
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.Text = "Nombre";
+            this.txtNombre.Click += new System.EventHandler(this.txtNombre_Click);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(495, 16);
+            this.txtDireccion.Location = new System.Drawing.Point(436, 16);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 2;
             this.txtDireccion.Text = "Direccion";
+            this.txtDireccion.Click += new System.EventHandler(this.txtDireccion_Click);
             // 
             // txtApellido
             // 
@@ -77,14 +83,18 @@ namespace Formularios
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
             this.txtApellido.TabIndex = 3;
             this.txtApellido.Text = "Apellido";
+            this.txtApellido.Click += new System.EventHandler(this.txtApellido_Click);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(389, 16);
+            this.txtTelefono.Location = new System.Drawing.Point(330, 16);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 4;
             this.txtTelefono.Text = "Telefono";
+            this.txtTelefono.Click += new System.EventHandler(this.txtTelefono_Click);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtDni
             // 
@@ -93,6 +103,8 @@ namespace Formularios
             this.txtDni.Size = new System.Drawing.Size(100, 20);
             this.txtDni.TabIndex = 5;
             this.txtDni.Text = "DNI";
+            this.txtDni.Click += new System.EventHandler(this.txtDni_Click);
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // radioButtonM
             // 
@@ -126,16 +138,6 @@ namespace Formularios
             this.radioButtonO.TabStop = true;
             this.radioButtonO.Text = "O";
             this.radioButtonO.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "+54"});
-            this.comboBox1.Location = new System.Drawing.Point(330, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(53, 21);
-            this.comboBox1.TabIndex = 9;
             // 
             // btnRegistrar
             // 
@@ -176,16 +178,53 @@ namespace Formularios
             this.label1.TabIndex = 13;
             this.label1.Text = "Genero";
             // 
+            // btnClientes
+            // 
+            this.btnClientes.Location = new System.Drawing.Point(583, 91);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(84, 23);
+            this.btnClientes.TabIndex = 15;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Atencion al cliente",
+            "Limpieza",
+            "Contador",
+            "Gerente",
+            "Repositor"});
+            this.comboBox1.Location = new System.Drawing.Point(542, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 16;
+            this.comboBox1.Text = "Areas";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(12, 62);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 17;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.radioButtonO);
             this.Controls.Add(this.radioButtonF);
             this.Controls.Add(this.radioButtonM);
@@ -214,10 +253,12 @@ namespace Formularios
         private System.Windows.Forms.RadioButton radioButtonM;
         private System.Windows.Forms.RadioButton radioButtonF;
         private System.Windows.Forms.RadioButton radioButtonO;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

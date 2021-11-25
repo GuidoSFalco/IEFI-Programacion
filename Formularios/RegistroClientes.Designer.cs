@@ -40,13 +40,11 @@ namespace Formularios
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnFormEmpleados = new System.Windows.Forms.Button();
             this.txtResponsable = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Adultos = new System.Windows.Forms.NumericUpDown();
             this.Menores = new System.Windows.Forms.NumericUpDown();
             this.Habitaciones = new System.Windows.Forms.NumericUpDown();
-            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Adultos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menores)).BeginInit();
@@ -60,6 +58,7 @@ namespace Formularios
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 287);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnReservar
             // 
@@ -79,6 +78,7 @@ namespace Formularios
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // btnEliminar
             // 
@@ -149,22 +149,13 @@ namespace Formularios
             this.label5.TabIndex = 10;
             this.label5.Text = "Fecha de Ingreso";
             // 
-            // btnFormEmpleados
-            // 
-            this.btnFormEmpleados.Location = new System.Drawing.Point(12, 194);
-            this.btnFormEmpleados.Name = "btnFormEmpleados";
-            this.btnFormEmpleados.Size = new System.Drawing.Size(75, 23);
-            this.btnFormEmpleados.TabIndex = 15;
-            this.btnFormEmpleados.Text = "Empleados";
-            this.btnFormEmpleados.UseVisualStyleBackColor = true;
-            this.btnFormEmpleados.Click += new System.EventHandler(this.btnFormEmpleados_Click);
-            // 
             // txtResponsable
             // 
             this.txtResponsable.Location = new System.Drawing.Point(150, 21);
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.Size = new System.Drawing.Size(170, 20);
             this.txtResponsable.TabIndex = 16;
+            this.txtResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtResponsable_KeyPress);
             // 
             // label6
             // 
@@ -196,26 +187,16 @@ namespace Formularios
             this.Habitaciones.Size = new System.Drawing.Size(43, 20);
             this.Habitaciones.TabIndex = 20;
             // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(12, 163);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 13);
-            this.lblError.TabIndex = 21;
-            // 
             // RegistroClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 532);
-            this.Controls.Add(this.lblError);
             this.Controls.Add(this.Habitaciones);
             this.Controls.Add(this.Menores);
             this.Controls.Add(this.Adultos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtResponsable);
-            this.Controls.Add(this.btnFormEmpleados);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -251,12 +232,10 @@ namespace Formularios
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnFormEmpleados;
         private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown Adultos;
         private System.Windows.Forms.NumericUpDown Menores;
         private System.Windows.Forms.NumericUpDown Habitaciones;
-        private System.Windows.Forms.Label lblError;
     }
 }

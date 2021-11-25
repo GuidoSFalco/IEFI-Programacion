@@ -18,7 +18,8 @@ namespace ConexionBD
             string orden = string.Empty;
             if (accion == "Alta")
             {
-                orden = "Insert into Empleados values (@Nombre, @Apellido,@DNI,@Telefono,@Direccion,@Genero);";
+                
+                orden = "Insert into Empleados values (@Nombre, @Apellido,@DNI,@Telefono,@Direccion,@Genero,@Area);";
                 OleDbCommand cmd = new OleDbCommand(orden, conexion);
                 try
                 {
@@ -30,6 +31,7 @@ namespace ConexionBD
                     cmd.Parameters.AddWithValue("@Telefono", objEmpleado.Telefono);
                     cmd.Parameters.AddWithValue("@Direccion", objEmpleado.Direccion);
                     cmd.Parameters.AddWithValue("@Genero", objEmpleado.Genero);
+                    cmd.Parameters.AddWithValue("@Area", objEmpleado.Area);
                     resultado = cmd.ExecuteNonQuery();
                 }
                 catch (Exception e)
@@ -66,7 +68,7 @@ namespace ConexionBD
             if (accion == "Modificar")
             {
 
-                orden = "Update Empleados set Nombre = @Nombre, [Fecha-de-nacimiento] = @Fecha, Sexo= @Sexo, Legajo= @Legajo, Carrera=@Carrera where Dni = @Dni";
+                orden = "Update Empleados set Nombre = @Nombre, Apellido = @Apellido,DNI = @DNI, Telefono= @Telefono, Direccion=@Direccion,Genero=@Genero,Area=@Area where DNI = @DNI";
                 OleDbCommand cmd = new OleDbCommand(orden, conexion);
                 try
                 {
@@ -76,6 +78,8 @@ namespace ConexionBD
                     cmd.Parameters.AddWithValue("@DNI", objEmpleado.Dni);
                     cmd.Parameters.AddWithValue("@Telefono", objEmpleado.Telefono);
                     cmd.Parameters.AddWithValue("@Direccion", objEmpleado.Direccion);
+                    cmd.Parameters.AddWithValue("@Genero", objEmpleado.Genero);
+                    cmd.Parameters.AddWithValue("@Area", objEmpleado.Area);
 
                     resultado = cmd.ExecuteNonQuery();
                 }
